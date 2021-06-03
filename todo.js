@@ -16,7 +16,7 @@ function deleteToDo(event) {
     toDos = cleanToDos;
     saveToDos();
 }
-
+ 
 function saveToDos(){
     localStorage.setItem(TODOS_LS, JSON.stringify(toDos));
 }

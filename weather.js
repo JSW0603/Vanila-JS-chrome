@@ -12,12 +12,17 @@ function getWeather(lat, lng) {
     .then(function(json){
         const temperature = json.main.temp;
         const place = json.name;
-        weather.innerText = `${temperature} @ ${place}`;
+        weather.innerText = `Temperature: ${temperature}°C 
+        Location: ${place}`;
     })
 }
 
 function saveCoords(coordsObj) {
     localStorage.setItem(COORDS, JSON.stringify(coordsObj));
+}
+
+function askForCoords(){
+    navigator.geolocation.getCurrentPosition(handleGeoSuccess, handleGeoError);
 }
 
 function handleGeoSuccess(position) {
@@ -33,10 +38,6 @@ function handleGeoSuccess(position) {
 
 function handleGeoError(){
     console.log('Cant access geo location');
-}
-
-function askForCoords(){
-    navigator.geolocation.getCurrentPosition(handleGeoSuccess, handleGeoError);
 }
 
 function loadCoords(){

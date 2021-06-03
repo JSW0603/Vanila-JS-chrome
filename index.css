@@ -14,7 +14,7 @@ body {
 .js-toDoForm,
 .js-toDoList,
 .js-weather {
-    color: white;
+    color: rgb(116, 23, 43);
 }
 
 .clicked{
